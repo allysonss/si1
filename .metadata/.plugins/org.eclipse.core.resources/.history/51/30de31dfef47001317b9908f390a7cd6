@@ -1,0 +1,25 @@
+package si1;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestaExtensoNum {
+        
+        private ExtensoNum extnum;
+        private String numero;
+
+        @Before
+        public void setUp() {
+                extnum = new ExtensoNum();
+        }
+        
+        @Test
+        public void testCasosBases() {
+                numero = "0"; 
+                assertEquals("zero", extnum.showExtenso(numero));
+                numero = "1000000000";
+                assertEquals("um bilhão", extnum.showExtenso(numero));
+        }
+
+}

@@ -1,0 +1,65 @@
+package si1;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestaExtensoNum {
+
+	private ExtensoNum extnum;
+	private String numero;
+
+	@Before
+	public void setUp() {
+		extnum = new ExtensoNum();
+	}
+
+	@Test
+	public void testCasosBases() {
+		numero = "0";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "1";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "2";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "3";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "4";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "5";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "6";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "7";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "8";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "9";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "10";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "11";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "12";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "13";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "14";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "15";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "16";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "17";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "18";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "19";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "20";
+		assertEquals("zero", extnum.showExtenso(numero));
+		numero = "1000000000";
+		assertEquals("um bilhão", extnum.showExtenso(numero));
+	}
+
+}
