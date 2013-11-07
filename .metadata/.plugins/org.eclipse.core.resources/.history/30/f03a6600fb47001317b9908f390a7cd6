@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class ExtensoNum {
 
+	private String extenso;
 	private HashMap<String, String> mapaPrincipaisExtensos;
 
 	public ExtensoNum() {
@@ -15,7 +16,8 @@ public class ExtensoNum {
 		if (Integer.parseInt(numero) >= 0 && Integer.parseInt(numero) <= 1000000000) {
 			int lenght = numero.length();
 			if (mapaPrincipaisExtensos.containsKey(numero)) {
-				return mapaPrincipaisExtensos.get(numero);
+				extenso = mapaPrincipaisExtensos.get(numero);
+				return extenso;
 			} else if (lenght == 2) {
 				return resolveDezena(numero);
 			} else if (lenght == 3) {
@@ -28,9 +30,6 @@ public class ExtensoNum {
 	}
 	
 	private String resolveDezena(String numero) {
-		if (mapaPrincipaisExtensos.containsKey(numero)) {
-			return mapaPrincipaisExtensos.get(numero);
-		}
 		String unidade = numero.substring(1);
 		String dezena = (numero.substring(0,1)) + "0";
 		if (!dezena.equals("00")){
@@ -41,18 +40,11 @@ public class ExtensoNum {
 	}
 	
 	private String resolveCentena(String numero) {
-		if (mapaPrincipaisExtensos.containsKey(numero)) {
-			return mapaPrincipaisExtensos.get(numero);
-		}
 		String centena = numero.substring(0, 1) + "00";
 		String dezena = numero.substring(1);
-		if (centena.equals("100")) {
-			return "cento e " + resolveDezena(dezena);
-		} else {
-			return mapaPrincipaisExtensos.get(centena) + " e " + resolveDezena(dezena);
-		}
+		return null;
 	}
-	
+
 	private void preencheMapa() {
 		mapaPrincipaisExtensos.put("0", "zero");
 		mapaPrincipaisExtensos.put("1", "um");

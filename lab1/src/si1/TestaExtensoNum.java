@@ -6,79 +6,103 @@ import org.junit.Test;
 
 public class TestaExtensoNum {
 
-	private ExtensoNum extnum;
+	private ExtensoNum eNum;
 	private String numero;
 
 	@Before
 	public void setUp() {
-		extnum = new ExtensoNum();
+		eNum = new ExtensoNum();
 	}
 
 	@Test
 	public void testCasosBases() throws Exception {
 		numero = "0";
-		assertEquals("zero", extnum.showExtenso(numero));
+		assertEquals("zero", eNum.showExtenso(numero));
 		numero = "1";
-		assertEquals("um", extnum.showExtenso(numero));
+		assertEquals("um", eNum.showExtenso(numero));
 		numero = "2";
-		assertEquals("dois", extnum.showExtenso(numero));
+		assertEquals("dois", eNum.showExtenso(numero));
 		numero = "3";
-		assertEquals("tres", extnum.showExtenso(numero));
+		assertEquals("tres", eNum.showExtenso(numero));
 		numero = "4";
-		assertEquals("quatro", extnum.showExtenso(numero));
+		assertEquals("quatro", eNum.showExtenso(numero));
 		numero = "5";
-		assertEquals("cinco", extnum.showExtenso(numero));
+		assertEquals("cinco", eNum.showExtenso(numero));
 		numero = "6";
-		assertEquals("seis", extnum.showExtenso(numero));
+		assertEquals("seis", eNum.showExtenso(numero));
 		numero = "7";
-		assertEquals("sete", extnum.showExtenso(numero));
+		assertEquals("sete", eNum.showExtenso(numero));
 		numero = "8";
-		assertEquals("oito", extnum.showExtenso(numero));
+		assertEquals("oito", eNum.showExtenso(numero));
 		numero = "9";
-		assertEquals("nove", extnum.showExtenso(numero));
+		assertEquals("nove", eNum.showExtenso(numero));
 		numero = "10";
-		assertEquals("dez", extnum.showExtenso(numero));
+		assertEquals("dez", eNum.showExtenso(numero));
 		numero = "11";
-		assertEquals("onze", extnum.showExtenso(numero));
+		assertEquals("onze", eNum.showExtenso(numero));
 		numero = "12";
-		assertEquals("doze", extnum.showExtenso(numero));
+		assertEquals("doze", eNum.showExtenso(numero));
 		numero = "13";
-		assertEquals("treze", extnum.showExtenso(numero));
+		assertEquals("treze", eNum.showExtenso(numero));
 		numero = "14";
-		assertEquals("catorze", extnum.showExtenso(numero));
+		assertEquals("catorze", eNum.showExtenso(numero));
 		numero = "15";
-		assertEquals("quinze", extnum.showExtenso(numero));
+		assertEquals("quinze", eNum.showExtenso(numero));
 		numero = "16";
-		assertEquals("dezesseis", extnum.showExtenso(numero));
+		assertEquals("dezesseis", eNum.showExtenso(numero));
 		numero = "17";
-		assertEquals("dezessete", extnum.showExtenso(numero));
+		assertEquals("dezessete", eNum.showExtenso(numero));
 		numero = "18";
-		assertEquals("dezoito", extnum.showExtenso(numero));
+		assertEquals("dezoito", eNum.showExtenso(numero));
 		numero = "19";
-		assertEquals("dezenove", extnum.showExtenso(numero));
+		assertEquals("dezenove", eNum.showExtenso(numero));
 		numero = "20";
-		assertEquals("vinte", extnum.showExtenso(numero));
+		assertEquals("vinte", eNum.showExtenso(numero));
 		numero = "1000000000";
-		assertEquals("um bilhao", extnum.showExtenso(numero));
+		assertEquals("um bilhao", eNum.showExtenso(numero));
 	}
 
 	@Test
 	public void testDezenas() throws Exception {
 		numero = "21";
-		assertEquals("vinte e um", extnum.showExtenso(numero));
+		assertEquals("vinte e um", eNum.showExtenso(numero));
 		numero = "43";
-		assertEquals("quarenta e tres", extnum.showExtenso(numero));
+		assertEquals("quarenta e tres", eNum.showExtenso(numero));
 		numero = "54";
-		assertEquals("cinquenta e quatro", extnum.showExtenso(numero));
+		assertEquals("cinquenta e quatro", eNum.showExtenso(numero));
 		numero = "89";
-		assertEquals("oitenta e nove", extnum.showExtenso(numero));
+		assertEquals("oitenta e nove", eNum.showExtenso(numero));
+		numero = "01";
+		assertEquals("um", eNum.showExtenso(numero));
+	}
+	
+	@Test
+	public void testCentenas() throws Exception {
+		numero = "101";
+		assertEquals("cento e um", eNum.showExtenso(numero));
+		numero = "198";
+		assertEquals("cento e noventa e oito", eNum.showExtenso(numero));
+		numero = "387";
+		assertEquals("trezentos e oitenta e sete", eNum.showExtenso(numero));
+		numero = "450";
+		assertEquals("quatrocentos e cinquenta", eNum.showExtenso(numero));
+		numero = "999";
+		assertEquals("novecentos e noventa e nove", eNum.showExtenso(numero));
+		numero = "583";
+		assertEquals("quinhentos e oitenta e tres", eNum.showExtenso(numero));
+		numero = "500";
+		assertEquals("quinhentos", eNum.showExtenso(numero));
+		numero = "123";
+		assertEquals("cento e vinte e tres", eNum.showExtenso(numero));
+		numero = "343";
+		assertEquals("trezentos e quarenta e tres", eNum.showExtenso(numero));
 	}
 	
 	@Test
 	(expected=Exception.class)
 	public void testExcecoes() throws Exception {
 		numero = "-21";
-		assertEquals("vinte e um", extnum.showExtenso(numero));
+		assertEquals("vinte e um", eNum.showExtenso(numero));
 	}
 	
 }

@@ -41,9 +41,7 @@ public class ExtensoNum {
 	}
 	
 	private String resolveCentena(String numero) {
-		if (mapaPrincipaisExtensos.containsKey(numero)) {
-			return mapaPrincipaisExtensos.get(numero);
-		}
+		
 		String centena = numero.substring(0, 1) + "00";
 		String dezena = numero.substring(1);
 		if (centena.equals("100")) {
