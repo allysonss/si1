@@ -1,0 +1,65 @@
+package si1;
+
+import java.util.HashMap;
+
+public class ExtensoNum {
+
+        private String extenso;
+        private HashMap<String, String> mapaExtensosPrincipais;
+        
+        public ExtensoNum() {
+                mapaExtensosPrincipais = new HashMap<String, String>();
+                preencheMapa();
+        }
+        
+        
+        public String showExtenso(String numero) {
+                if (mapaExtensosPrincipais.containsKey(numero)) {
+                        extenso = mapaExtensosPrincipais.get(numero);
+                        return extenso;
+                }
+                return null;
+        }
+        
+        private void preencheMapa() {
+                mapaExtensosPrincipais.put("0", "zero");
+                mapaExtensosPrincipais.put("1", "um");
+                mapaExtensosPrincipais.put("2", "dois");
+                mapaExtensosPrincipais.put("3", "tres");
+                mapaExtensosPrincipais.put("4", "quatro");
+                mapaExtensosPrincipais.put("5", "cinco");
+                mapaExtensosPrincipais.put("6", "seis");
+                mapaExtensosPrincipais.put("7", "sete");
+                mapaExtensosPrincipais.put("8", "oito");
+                mapaExtensosPrincipais.put("9", "nove");
+                mapaExtensosPrincipais.put("10", "dez");
+                mapaExtensosPrincipais.put("11", "onze");
+                mapaExtensosPrincipais.put("12", "doze");
+                mapaExtensosPrincipais.put("13", "treze");  //S2
+                mapaExtensosPrincipais.put("14", "catorze");
+                mapaExtensosPrincipais.put("15", "quinze");
+                mapaExtensosPrincipais.put("16", "dezesseis");
+                mapaExtensosPrincipais.put("17", "dezessete");
+                mapaExtensosPrincipais.put("18", "dezoito");
+                mapaExtensosPrincipais.put("19", "dezenove");
+                mapaExtensosPrincipais.put("20", "vinte");
+                mapaExtensosPrincipais.put("30", "trinta");
+                mapaExtensosPrincipais.put("40", "quarenta");
+                mapaExtensosPrincipais.put("50", "cinquenta");
+                mapaExtensosPrincipais.put("60", "sessenta");
+                mapaExtensosPrincipais.put("70", "setenta");
+                mapaExtensosPrincipais.put("80", "oitenta");
+                mapaExtensosPrincipais.put("90", "noventa");
+                mapaExtensosPrincipais.put("100", "cem");
+                mapaExtensosPrincipais.put("200", "duzentos");
+                mapaExtensosPrincipais.put("300", "trezentos");
+                mapaExtensosPrincipais.put("400", "quatrocentos");
+                mapaExtensosPrincipais.put("500", "quinhentos");
+                mapaExtensosPrincipais.put("600", "seiscentos");
+                mapaExtensosPrincipais.put("700", "setecentos");
+                mapaExtensosPrincipais.put("800", "oitocentos");
+                mapaExtensosPrincipais.put("900", "novecentos");
+                
+                mapaExtensosPrincipais.put("1000000000", "um bilhão");
+        }
+}

@@ -20,3 +20,13 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.net 4 0 2013-11-07 18:21:14.968
+!MESSAGE WinHttp.GetProxyForUrl for pac failed with error 'The proxy auto-configuration script could not be downloaded
+' #12167.
+
+!ENTRY org.eclipse.ui 4 4 2013-11-07 18:30:28.421
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.
+
+!ENTRY com.android.ide.eclipse.ddms 4 0 2013-11-07 18:30:28.906
+!MESSAGE DDMS files not found: E:\Documentos\Allyson\eclipse\platform-tools\adb.exe E:\Documentos\Allyson\eclipse\tools\hprof-conv.exe E:\Documentos\Allyson\eclipse\tools\traceview.bat 
