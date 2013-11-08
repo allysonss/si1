@@ -92,17 +92,8 @@ public class ExtensoNum {
 
 	private String resolveDezenaDeMilhar(String numero) {
 		String dezenaDeMilhar = numero.substring(0, 2);
-		String centena = numero.substring(2, 5);
-		if (Integer.parseInt(numero)% 1000 == 0) {
-			return resolveDezena(dezenaDeMilhar) + " mil";
-		}
-		if (centena.substring(0).equals("0")) {
-			return resolveDezena(dezenaDeMilhar) + " mil e " + resolveCentena(centena);
-		}
-		if (mapaPrincipaisExtensos.containsKey(centena)) {
-			return resolveDezena(dezenaDeMilhar) + " mil e " + mapaPrincipaisExtensos.get(centena);
-		}
-		return resolveDezena(dezenaDeMilhar) + " mil " + resolveCentena(centena);
+		
+		return null;
 	}
 
 	private void preencheMapa() {

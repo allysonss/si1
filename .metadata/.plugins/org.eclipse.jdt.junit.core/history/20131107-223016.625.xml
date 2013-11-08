@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestaExtensoNum" project="lab1" tests="7" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="si1.TestaExtensoNum" incomplete="true">
+    <testcase name="testCentenas" classname="si1.TestaExtensoNum" time="0.0"/>
+    <testcase name="testMilhares" classname="si1.TestaExtensoNum" time="0.0"/>
+    <testcase name="testDezenas" classname="si1.TestaExtensoNum" time="0.0"/>
+    <testcase name="testCasosBases" classname="si1.TestaExtensoNum" time="0.0"/>
+    <testcase name="testDezenasDeMilhares" classname="si1.TestaExtensoNum" incomplete="true"/>
+    <testcase name="testExcecao1" classname="si1.TestaExtensoNum" incomplete="true"/>
+    <testcase name="testExcecao2" classname="si1.TestaExtensoNum" incomplete="true"/>
+  </testsuite>
+</testrun>

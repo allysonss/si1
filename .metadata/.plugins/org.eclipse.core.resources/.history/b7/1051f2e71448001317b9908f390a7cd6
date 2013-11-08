@@ -130,8 +130,6 @@ public class TestaExtensoNum {
 		assertEquals("cinco mil", eNum.showExtenso(numero));
 		numero = "0000";
 		assertEquals("zero", eNum.showExtenso(numero));
-		numero = "2100";
-		assertEquals("dois mil e cem", eNum.showExtenso(numero));
 	}
 	
 	@Test
@@ -140,6 +138,8 @@ public class TestaExtensoNum {
 		assertEquals("dez mil oitocentos e setenta", eNum.showExtenso(numero));
 		numero = "99500";
 		assertEquals("noventa e nove mil e quinhentos", eNum.showExtenso(numero));
+		numero = "00000";
+		assertEquals("zero", eNum.showExtenso(numero));
 		numero = "19616";
 		assertEquals("dezenove mil seiscentos e dezesseis", eNum.showExtenso(numero));
 		numero = "19000";
