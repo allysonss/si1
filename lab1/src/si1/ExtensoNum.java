@@ -24,6 +24,8 @@ public class ExtensoNum {
 				return resolveMilhar(numero);
 			} else if (lenght == 5) {
 				return resolveDezenaDeMilhar(numero);
+			} else if (lenght == 6) {
+				return resolveCentenaDeMilhar(numero);
 			}
 			return null;
 		} else {
@@ -93,16 +95,31 @@ public class ExtensoNum {
 	private String resolveDezenaDeMilhar(String numero) {
 		String dezenaDeMilhar = numero.substring(0, 2);
 		String centena = numero.substring(2, 5);
-		if (Integer.parseInt(numero)% 1000 == 0) {
+		if (Integer.parseInt(numero) % 1000 == 0) {
 			return resolveDezena(dezenaDeMilhar) + " mil";
 		}
-		if (centena.substring(0).equals("0")) {
+		if (centena.substring(0, 1).equals("0")) {
 			return resolveDezena(dezenaDeMilhar) + " mil e " + resolveCentena(centena);
 		}
 		if (mapaPrincipaisExtensos.containsKey(centena)) {
 			return resolveDezena(dezenaDeMilhar) + " mil e " + mapaPrincipaisExtensos.get(centena);
 		}
 		return resolveDezena(dezenaDeMilhar) + " mil " + resolveCentena(centena);
+	}
+	
+	private String resolveCentenaDeMilhar(String numero) {
+		String centenaDeMilhar = numero.substring(0, 3);
+		String centena = numero.substring(3, 6);
+		if (Integer.parseInt(numero) % 10000 == 0) {
+			return resolveCentena(centenaDeMilhar) + " mil";
+		}
+		if (centena.substring(0, 1).equals("0")) {
+			return resolveCentena(centenaDeMilhar) + " mil e " + resolveCentena(centena);
+		}
+		if (mapaPrincipaisExtensos.containsKey(centena)) {
+			return resolveCentena(centenaDeMilhar) + " mil e " + mapaPrincipaisExtensos.get(centena);
+		}
+		return resolveCentena(centenaDeMilhar) + " mil " + resolveCentena(centena);
 	}
 
 	private void preencheMapa() {

@@ -1,0 +1,12 @@
+{
+  "C:\\Arquivos de programas\\Java\\jre7\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Arquivos de programas\\Java\\jre7\\lib\\rt.jar",
+    "status": "RESOLVED"
+  },
+  "D:\\Allyson\\Sistemas de Informação 1\\GitHub\\si1\\lab1\\src": {
+    "location": "D:\\Allyson\\Sistemas de Informação 1\\GitHub\\si1\\lab1\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027D:\\Allyson\\Sistemas de Informação 1\\GitHub\\si1\\lab1\\src\u0027. Skipped."
+  }
+}
