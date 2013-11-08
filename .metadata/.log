@@ -59,3 +59,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.android.ide.eclipse.ddms 4 0 2013-11-07 23:57:07.671
 !MESSAGE DDMS files not found: E:\Documentos\Allyson\eclipse\platform-tools\adb.exe E:\Documentos\Allyson\eclipse\tools\hprof-conv.exe E:\Documentos\Allyson\eclipse\tools\traceview.bat 
+
+!ENTRY org.eclipse.recommenders.utils.rcp 2 0 2013-11-08 00:40:21.500
+!MESSAGE Can't handle class org.eclipse.jdt.internal.compiler.ast.CombinedBinaryExpression as parent of completion location.

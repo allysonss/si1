@@ -175,7 +175,7 @@ public class TestaExtensoNum {
 		numero = "1000000";
 		assertEquals("um milhao", eNum.showExtenso(numero));
 		numero = "1100000";
-		assertEquals("um milhao e cem mil", eNum.showExtenso(numero));
+		assertEquals("um milhao cento e dois mil", eNum.showExtenso(numero));
 		numero = "1000001";
 		assertEquals("um milhao e um", eNum.showExtenso(numero));
 		numero = "1081961";

@@ -125,18 +125,7 @@ public class ExtensoNum {
 	}
 	
 	private String resolveMilhao(String numero) {
-		String unidadeDeMilhao = numero.substring(0, 1);
-		String centenaDeMilhar = numero.substring(1, 4) + "000";
-		if (Integer.parseInt(numero) % 1000000 == 0) {
-			return mapaPrincipaisExtensos.get(unidadeDeMilhao) + " milhoes";
-		}
-		if (Integer.parseInt(numero) % 100000 == 0) {
-			if (unidadeDeMilhao.equals("1")) {
-				return "um milhao e " + resolveCentenaDeMilhar(centenaDeMilhar);
-			}
-			return mapaPrincipaisExtensos.get(unidadeDeMilhao) + " milhoes e " + resolveCentenaDeMilhar(centenaDeMilhar);
-		}
-		return null; // TODO
+		if ()
 	}
 
 	private void preencheMapa() {

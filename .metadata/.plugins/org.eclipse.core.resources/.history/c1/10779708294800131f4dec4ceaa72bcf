@@ -136,7 +136,7 @@ public class ExtensoNum {
 			}
 			return mapaPrincipaisExtensos.get(unidadeDeMilhao) + " milhoes e " + resolveCentenaDeMilhar(centenaDeMilhar);
 		}
-		return null; // TODO
+		return null;
 	}
 
 	private void preencheMapa() {

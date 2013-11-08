@@ -174,22 +174,13 @@ public class TestaExtensoNum {
 	public void testMilhao() throws Exception {
 		numero = "1000000";
 		assertEquals("um milhao", eNum.showExtenso(numero));
-		numero = "1100000";
-		assertEquals("um milhao e cem mil", eNum.showExtenso(numero));
 		numero = "1000001";
 		assertEquals("um milhao e um", eNum.showExtenso(numero));
 		numero = "1081961";
 		assertEquals("um milhao oitenta e um mil novecentos e sessenta e um", eNum.showExtenso(numero));
 		numero = "1600000";
 		assertEquals("um milhao e seiscentos mil", eNum.showExtenso(numero));
-		numero = "3000484";
-		assertEquals("tres milhoes quatrocentos e oitenta e quatro", eNum.showExtenso(numero));
-		numero = "1000010";
-		assertEquals("um milhao e dez", eNum.showExtenso(numero));
-		numero = "2000010";
-		assertEquals("dois milhoes e dez", eNum.showExtenso(numero));
-		numero = "2000200";
-		assertEquals("dois milhoes e duzentos", eNum.showExtenso(numero));
+		
 	}
 
 	@Test(expected = Exception.class)
