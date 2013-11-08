@@ -96,13 +96,70 @@ public class TestaExtensoNum {
 		assertEquals("cento e vinte e tres", eNum.showExtenso(numero));
 		numero = "343";
 		assertEquals("trezentos e quarenta e tres", eNum.showExtenso(numero));
+		numero = "210";
+		assertEquals("duzentos e dez", eNum.showExtenso(numero));
+		numero = "001";
+		assertEquals("um", eNum.showExtenso(numero));
+		numero = "011";
+		assertEquals("onze", eNum.showExtenso(numero));
+	}
+	
+	@Test
+	public void testMilhares() throws Exception {
+		numero = "1001";
+		assertEquals("mil e um", eNum.showExtenso(numero));
+		numero = "1210";
+		assertEquals("mil duzentos e dez", eNum.showExtenso(numero));
+		numero = "2001";
+		assertEquals("dois mil e um", eNum.showExtenso(numero));
+		numero = "2013";
+		assertEquals("dois mil e treze", eNum.showExtenso(numero));
+		numero = "9999";
+		assertEquals("nove mil novecentos e noventa e nove", eNum.showExtenso(numero));
+		numero = "5652";
+		assertEquals("cinco mil seiscentos e cinquenta e dois", eNum.showExtenso(numero));
+		numero = "1994";
+		assertEquals("mil novecentos e noventa e quatro", eNum.showExtenso(numero));
+		numero = "2009";
+		assertEquals("dois mil e nove", eNum.showExtenso(numero));
+		numero = "4610";
+		assertEquals("quatro mil seiscentos e dez", eNum.showExtenso(numero));
+		numero = "5500";
+		assertEquals("cinco mil e quinhentos", eNum.showExtenso(numero));
+		numero = "5000";
+		assertEquals("cinco mil", eNum.showExtenso(numero));
+		numero = "0000";
+		assertEquals("zero", eNum.showExtenso(numero));
+	}
+	
+	@Test
+	public void testDezenasDeMilhares() throws Exception {
+		numero = "10870";
+		assertEquals("dez mil oitocentos e setenta", eNum.showExtenso(numero));
+		numero = "99500";
+		assertEquals("noventa e nove mil e quinhentos", eNum.showExtenso(numero));
+		numero = "00000";
+		assertEquals("zero", eNum.showExtenso(numero));
+		numero = "19616";
+		assertEquals("dezenove mil seiscentos e dezesseis", eNum.showExtenso(numero));
+		numero = "19000";
+		assertEquals("dezenove mil", eNum.showExtenso(numero));
+		numero = "84965";
+		assertEquals("oitenta e quatro mil novecentos e sessenta e cinco", eNum.showExtenso(numero));
 	}
 	
 	@Test
 	(expected=Exception.class)
-	public void testExcecoes() throws Exception {
+	public void testExcecao1() throws Exception {
 		numero = "-21";
 		assertEquals("vinte e um", eNum.showExtenso(numero));
+	}
+	
+	@Test
+	(expected=Exception.class)
+	public void testExcecao2() throws Exception {
+		numero = "1000000001";
+		assertEquals("um bilhao e um", eNum.showExtenso(numero));
 	}
 	
 }

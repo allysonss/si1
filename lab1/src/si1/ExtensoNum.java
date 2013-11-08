@@ -20,26 +20,28 @@ public class ExtensoNum {
 				return resolveDezena(numero);
 			} else if (lenght == 3) {
 				return resolveCentena(numero);
+			} else if (lenght == 4) {
+				return resolveMilhar(numero);
 			}
 			return null;
 		} else {
 			throw new Exception("Numero fora dos limites.");
 		}
 	}
-	
+
 	private String resolveDezena(String numero) {
 		if (mapaPrincipaisExtensos.containsKey(numero)) {
 			return mapaPrincipaisExtensos.get(numero);
 		}
+		String dezena = (numero.substring(0, 1)) + "0";
 		String unidade = numero.substring(1);
-		String dezena = (numero.substring(0,1)) + "0";
-		if (!dezena.equals("00")){
+		if (!dezena.equals("00")) {
 			return mapaPrincipaisExtensos.get(dezena) + " e " + mapaPrincipaisExtensos.get(unidade);
 		} else {
 			return mapaPrincipaisExtensos.get(unidade);
 		}
 	}
-	
+
 	private String resolveCentena(String numero) {
 		if (mapaPrincipaisExtensos.containsKey(numero)) {
 			return mapaPrincipaisExtensos.get(numero);
@@ -48,11 +50,44 @@ public class ExtensoNum {
 		String dezena = numero.substring(1);
 		if (centena.equals("100")) {
 			return "cento e " + resolveDezena(dezena);
+		} else if (centena.equals("000")) {
+			return resolveDezena(dezena);
 		} else {
 			return mapaPrincipaisExtensos.get(centena) + " e " + resolveDezena(dezena);
 		}
 	}
-	
+
+	private String resolveMilhar(String numero) {
+		if (mapaPrincipaisExtensos.containsKey(numero)) {
+			return mapaPrincipaisExtensos.get(numero);
+		}
+		String milhar = numero.substring(0, 1) + "000";
+		String unidadeDeMilhar = milhar.substring(0, 1);
+		String centena = numero.substring(1, 4);
+		if (centena.equals("000")) {
+			if (unidadeDeMilhar.equals("0")) {
+				return "zero";
+			}
+			return mapaPrincipaisExtensos.get(unidadeDeMilhar) + " mil";
+		}
+		if (unidadeDeMilhar.equals("1")) {
+			if (mapaPrincipaisExtensos.containsKey(centena)) {
+				return "mil e " + mapaPrincipaisExtensos.get(centena);
+			}
+			if (centena.substring(0, 1).equals("0")) {
+				return "mil e " + resolveCentena(centena);
+			}
+			return "mil " + resolveCentena(centena);
+		}
+		if (mapaPrincipaisExtensos.containsKey(centena)) {
+			return mapaPrincipaisExtensos.get(unidadeDeMilhar) + " mil e " + mapaPrincipaisExtensos.get(centena);
+		}
+		if (centena.substring(0, 1).equals("0")) {
+			return mapaPrincipaisExtensos.get(unidadeDeMilhar) + " mil e " + resolveCentena(centena);
+		}
+		return mapaPrincipaisExtensos.get(unidadeDeMilhar) + " mil " + resolveCentena(centena);
+	}
+
 	private void preencheMapa() {
 		mapaPrincipaisExtensos.put("0", "zero");
 		mapaPrincipaisExtensos.put("1", "um");
@@ -91,6 +126,7 @@ public class ExtensoNum {
 		mapaPrincipaisExtensos.put("700", "setecentos");
 		mapaPrincipaisExtensos.put("800", "oitocentos");
 		mapaPrincipaisExtensos.put("900", "novecentos");
+		mapaPrincipaisExtensos.put("1000", "mil");
 		mapaPrincipaisExtensos.put("1000000", "um milhao");
 		mapaPrincipaisExtensos.put("1000000000", "um bilhao");
 	}
