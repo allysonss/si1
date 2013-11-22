@@ -5,7 +5,6 @@ INDEX VERSION 1.126+C:\Sistemas de Informação\GitHub\si1\.metadata\.plugins\org.
 3730526690.index
 774558276.index
 3585733931.index
-2620941534.index
 1789169078.index
 2594609853.index
 3277441100.index
