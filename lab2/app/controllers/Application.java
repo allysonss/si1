@@ -6,7 +6,7 @@ import play.mvc.*;
 import views.html.*;
 
 public class Application extends Controller {
-
+	
 	static Form<Task> taskForm = Form.form(Task.class);
 
 	public static Result index() {

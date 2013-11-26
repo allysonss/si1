@@ -3,25 +3,34 @@ package models;
 import java.util.*;
 
 import play.data.validation.Constraints.*;
-import play.db.ebean.Model.Finder;
+import play.db.ebean.*;
 
-public class Task {
+import javax.persistence.*;
 
+@Entity
+public class Task extends Model {
+
+
+	@Id
 	public Long id;
 	
 	@Required
 	public String label;
 	
+	private static final long serialVersionUID = 1L;
+
+	public static Finder<Long, Task> find = new Finder<Long, Task>(Long.class, Task.class);
+
 	public static List<Task> all() {
-		return new ArrayList<Task>();
+		return find.all();
 	}
 	
 	public static void create(Task task) {
-		//TODO
+		task.save();
 	}
 	
 	public static void delete(Long id) {
-		//TODO
+		find.ref(id).delete();
 	}
 	
 }
