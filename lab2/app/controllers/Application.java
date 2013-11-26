@@ -32,9 +32,10 @@ public class Application extends Controller {
 		    return redirect(routes.Application.tasks());  
 		  }
 		}
-
+ 
 	public static Result deleteTask(Long id) {
-		return TODO;
+		Task.delete(id);
+		return redirect(routes.Application.tasks());
 	}
 
 }
